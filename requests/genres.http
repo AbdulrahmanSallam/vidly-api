@@ -1,0 +1,25 @@
+@base = http://localhost:3000/genres
+@id = 3
+
+
+GET {{base}}
+
+###
+POST {{base}}
+Content-Type: application/json
+
+{
+    "name":"new"
+}
+
+
+###
+PUT  {{base}}/{{id}}
+Content-Type: application/json
+
+{
+    "name":"hello"
+}
+
+###
+Delete  {{base}}/{{id}}
