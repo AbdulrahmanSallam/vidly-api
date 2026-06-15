@@ -1,7 +1,6 @@
 @base = http://localhost:3000/api/genres
 @id = 3
 
-
 GET {{base}}
 
 ###
