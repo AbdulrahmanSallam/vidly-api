@@ -1,5 +1,5 @@
 @base = http://localhost:3000/api/genres
-@id = 6a30893e588a8f6363216c8d
+@id = 6a30a25f2464ba4c957b9eb9
 
 GET {{base}}
 Accept: application/json
