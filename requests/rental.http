@@ -1,0 +1,25 @@
+@base = http://localhost:3000/api/rentals
+@id = 6a30a176fe6f2a398b7d764b
+
+@movieId = 6a30baa84e84a64515a1664f
+@customerId = 6a30a189fe6f2a398b7d764f
+
+GET {{base}}
+Accept: application/json
+
+###
+
+GET {{base}}/{{id}}
+Accept: application/json
+
+###
+POST {{base}}
+Content-Type: application/json
+
+{
+   "customerId":"{{customerId}}",
+   "movieId":"{{movieId}}"
+}
+
+###
+Delete  {{base}}/{{id}}
