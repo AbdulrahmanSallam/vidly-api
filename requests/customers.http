@@ -1,9 +1,8 @@
-@base = http://localhost:3000/api/genres
-@id = 6a30893e588a8f6363216c8d
+@base = http://localhost:3000/api/customers
+@id = 6a30996e82c99d470f476703
 
 GET {{base}}
 Accept: application/json
-
 
 ###
 
@@ -15,7 +14,9 @@ POST {{base}}
 Content-Type: application/json
 
 {
-    "name":"action"
+    "name":"abdulrahman",
+    "phone":"01063030401",
+    "isGold":false
 }
 
 
@@ -24,7 +25,9 @@ PUT  {{base}}/{{id}}
 Content-Type: application/json
 
 {
-    "name":"hello"
+    "name":"abdularhman sallam",
+    "phone":"01063030401",
+    "isGold":false
 }
 
 ###

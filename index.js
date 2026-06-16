@@ -1,11 +1,17 @@
+const mongoose = require("mongoose");
 const helmet = require("helmet");
 const appDebugger = require("debug")("app");
-const Joi = require("joi");
 const genres = require("./routes/genres");
+
 const express = require("express");
 const app = express();
 
-app.use(helmet);
+mongoose
+  .connect("mongodb://localhost/vidly")
+  .then(console.log("Connected to MongoDB..."))
+  .catch(err => console.log("Could not connect MongoDB...."));
+
+app.use(helmet());
 app.use(express.json());
 app.use("/api/genres", genres);
 
