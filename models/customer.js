@@ -7,8 +7,8 @@ const Customer = mongoose.model(
     name: {
       type: String,
       required: true,
-      minlength: 3,
-      maxlength: 255,
+      minlength: 5,
+      maxlength: 50,
       trim: true,
     },
     phone: {
@@ -27,7 +27,7 @@ const Customer = mongoose.model(
 
 function validateCustomer(customer) {
   const schema = Joi.object({
-    name: Joi.string().required().min(3).max(255),
+    name: Joi.string().required().min(5).max(50),
     phone: Joi.string().required().min(5).max(50),
     isGold: Joi.boolean(),
   });

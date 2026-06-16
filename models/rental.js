@@ -9,8 +9,8 @@ const Rental = mongoose.model(
         name: {
           type: String,
           required: true,
-          minlength: 3,
-          maxlength: 255,
+          minlength: 5,
+          maxlength: 50,
           trim: true,
         },
         phone: {
@@ -29,7 +29,7 @@ const Rental = mongoose.model(
     },
     movie: {
       type: new mongoose.Schema({
-        title: { type: String, minlength: 3, maxlength: 255, required: true },
+        title: { type: String, minlength: 5, maxlength: 50, required: true },
         dailyRentalRate: { type: Number, required: true, min: 0, max: 255 },
       }),
       required: true,
