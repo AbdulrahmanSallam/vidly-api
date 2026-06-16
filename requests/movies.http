@@ -1,0 +1,37 @@
+@base = http://localhost:3000/api/movies
+@id = 6a30baa84e84a64515a1664f
+@genreId = 6a30c148e741d7f5b30926c1
+
+GET {{base}}
+Accept: application/json
+
+
+###
+
+GET {{base}}/{{id}}
+Accept: application/json
+
+###
+POST {{base}}
+Content-Type: application/json
+
+{
+    "title":"sun glasses",
+    "numberInStock":2,
+    "dailyRentalRate":2,
+    "genreId":"{{genreId}}"
+}
+
+
+###
+PUT  {{base}}/{{id}}
+Content-Type: application/json
+
+{
+    "title":"action",
+    "numberInStock":2,
+    "dailyRentalRate":2,
+    "genreId":"{{genreId}}"
+}
+###
+Delete  {{base}}/{{id}}

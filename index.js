@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const helmet = require("helmet");
 const appDebugger = require("debug")("app");
+const movies = require("./routes/movies");
 const genres = require("./routes/genres");
 const customers = require("./routes/customers");
 const express = require("express");
@@ -13,6 +14,7 @@ mongoose
 
 app.use(helmet());
 app.use(express.json());
+app.use("/api/movies", movies);
 app.use("/api/genres", genres);
 app.use("/api/customers", customers);
 
