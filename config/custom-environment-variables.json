@@ -1,3 +1,7 @@
 {
+  "db": {
+    "uri": "MONGODB_URI"
+  },
+  "port": "vidly_PORT",
   "jwtPrivateKey": "vidly_jwtPrivateKey"
 }

@@ -1,4 +1,4 @@
-@base = http://localhost:3000/api/customers
+@base = https://vidly-api-production-5b18.up.railway.app/api/customers
 @id = 6a30a176fe6f2a398b7d764b
 
 GET {{base}}

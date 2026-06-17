@@ -1,3 +1,7 @@
 {
-  "jwtPrivateKey": ""
+  "db": {
+    "uri": "mongodb://localhost:27017/vidly"
+  },
+  "port": "3000",
+  "jwtPrivateKey": "default_secret_key"
 }

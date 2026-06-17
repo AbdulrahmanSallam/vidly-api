@@ -1,0 +1,51 @@
+# Dependencies
+node_modules
+npm-debug.log
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker files
+Dockerfile
+.dockerignore
+docker-compose.yml
+docker-compose*.yml
+
+# IDE and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# OS files
+Thumbs.db
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+.jenkins/
+
+# Documentation
+README.md
+LICENSE
+docs/
+
+# Keep these if they're only for local development
+# If requests folder contains .http files for testing, you can ignore them
+requests/

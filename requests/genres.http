@@ -1,5 +1,8 @@
 @base = http://localhost:3000/api/genres
-@id = 6a30a25f2464ba4c957b9eb9
+@id = 6a30c148e741d7f5b30926c1
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTMzMDRhZjkzM2VmYTM3NWFkYWVkZGIiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3ODE3ODgzMTh9.xS1OVDMX-24X4tFvTKXQPgwAS5qSSj5M9_bhzs5zxQ4
+
+# vidly-api-production-5b18.up.railway.app/api/genres
 
 GET {{base}}
 Accept: application/json
@@ -13,9 +16,10 @@ Accept: application/json
 ###
 POST {{base}}
 Content-Type: application/json
+x-auth-token: {{token}}
 
 {
-    "name":"action"
+    "name":"Thriller"
 }
 
 
@@ -29,3 +33,4 @@ Content-Type: application/json
 
 ###
 Delete  {{base}}/{{id}}
+x-auth-token: {{token}}

@@ -1,5 +1,12 @@
-const winston = require("winston");
+﻿const winston = require("winston");
 require("winston-mongodb");
+
+const consoleTransport = new winston.transports.Console({
+  format: winston.format.combine(
+    winston.format.colorize(),
+    winston.format.simple(),
+  ),
+});
 
 const logger = winston.createLogger({
   level: "info",
@@ -7,21 +14,27 @@ const logger = winston.createLogger({
     winston.format.timestamp(),
     winston.format.json(),
   ),
-  transports: [
-    new winston.transports.Console(),
-    new winston.transports.File({ filename: "logs/combined.log" }),
-    new winston.transports.MongoDB({
-      db: "mongodb://localhost:27017/vidly",
-      collection: "logs",
-      level: "info",
-    }),
-  ],
-  exceptionHandlers: [
-    new winston.transports.File({ filename: "logs/exceptions.log" }),
-  ],
-  rejectionHandlers: [
-    new winston.transports.File({ filename: "logs/rejections.log" }),
-  ],
+  transports: [consoleTransport],
+  exceptionHandlers: [consoleTransport],
+  rejectionHandlers: [consoleTransport],
+  exitOnError: false,
 });
+
+try {
+  const dbUri = process.env.MONGODB_URI;
+  if (dbUri) {
+    logger.add(
+      new winston.transports.MongoDB({
+        db: dbUri,
+        collection: "logs",
+        level: "error",
+        handleExceptions: true,
+        handleRejections: true,
+      }),
+    );
+  }
+} catch (error) {
+  console.warn("MongoDB logging transport not available");
+}
 
 module.exports = logger;

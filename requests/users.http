@@ -1,0 +1,19 @@
+@base =  http://localhost:3000/api/users
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTMzMDRhZjkzM2VmYTM3NWFkYWVkZGIiLCJpYXQiOjE3ODE3Mjg5ODh9.ChQD5T6QhIJpuf62M02IMUxTBmECXlGJO7iqh2vSgsk
+
+# vidly-api-production-5b18.up.railway.app/api/auth
+
+### register
+POST {{base}}
+Content-Type: application/json
+
+{
+    "name":"abdulrahman",
+    "email":"abdulrahmansallam99@gmail.com",
+    "password":"abcdefghi"
+}
+
+
+### get
+GET {{base}}/me
+x-auth-token: {{token}}
